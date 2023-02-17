@@ -14,6 +14,8 @@
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
 % \renewcommand\arraystretch{1.4}
 \renewcommand{\baselinestretch}{1.53}
+\bibliographystyle{plain}
+\addbibresource{citations.bib}
 
 \title{对数字图像中最先进的去噪技术的系统回顾}  %文章标题
 \author{Nishant Bindal·Rajanbir Singh Ghumaan·Prateek Jeet Singh Sohi·
@@ -27,7 +29,7 @@
 
 \maketitle          %添加这一句才能够显示标题等信息
 
-\textbf{摘要}
+\textbf{\Large摘要}
 
 数字图像处理是数字信号处理的一个子类别，重点是研究用于增强或恢复的处理技术。被各种类型的噪声破坏的图像
 的去噪就属于这个类别。去噪主要是为了提高受影响图像的可理解性。用故障设备拍摄的图像或经过长途传输的图像
@@ -134,7 +136,7 @@ IEF是实际图像和损坏图像的MSE与实际图像和重建图像的MSE之�
 \end{equation}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{images/001.eps}
+    \includegraphics[width=0.6\textwidth]{images/01.eps}
     \caption{各种盐和胡椒噪声去除技术的分类流程图}
     \label{fig:meanfilter}
 \end{figure}
@@ -297,9 +299,6 @@ RSIF滤波器[28]与MDBUTMF[11]相似，但该滤波器使用三次样条插值�
 高噪声密度的情况下很少有这种情况。这个滤波器的另一个主要缺点是它需要更多的执行时间。
 
 \subsubsection{自适应切换加权中值滤波器}
-964 / 5,000
-翻译结果
-翻译结果
 该过滤器主要使用两个条件来检测噪声像素，即窗口中的像素应该是“255”或“0”，其窗口均值分别不等于“255”和“0”[12]。
  它还使用可变窗口大小的概念。 如果大小为 3×3 的处理窗口中无噪声可用像素的数量是奇数，则损坏的像素将被修剪窗口
  的中值替换。 否则，重复窗口中具有最大出现次数的非噪声像素或最近的非噪声像素（如果没有具有最大填充可用的单个值）
@@ -353,7 +352,7 @@ RSIF滤波器[28]与MDBUTMF[11]相似，但该滤波器使用三次样条插值�
     \item 基于不同性能指标的仿真结果。
 \end{itemize}
 
-\begin{table}[]\small
+\begin{table}[]{\small}
     \centering
     \caption{用于去除盐和胡椒噪声的各种滤波器的数学公式}
     \begin{tabular}{@{}p{3cm}lp{8cm}@{}}
@@ -412,7 +411,7 @@ RSIF滤波器[28]与MDBUTMF[11]相似，但该滤波器使用三次样条插值�
     \end{tabular}
 \end{table}
 
-\begin{table}[t]\small
+\begin{table}[t]{\small}
     \caption{(continue)}
     \begin{tabular}{@{}p{4cm}lp{6cm}@{}}
     \toprule
@@ -456,12 +455,156 @@ RSIF滤波器[28]与MDBUTMF[11]相似，但该滤波器使用三次样条插值�
 
 下一节介绍了对这些最先进的盐和胡椒噪声去除技术的比较分析。
 
-\subsection{仿真环境和比较分析}
+\section{仿真环境和比较分析}
 下面的小节给出了一些最先进的盐和胡椒噪声去除技术在不同噪声密度的基准图像上的定性和定量分析。所有现有的过滤
 技术都在MALTAB中实现，并以基准输入进行模拟。最初，在这些基准图像中加入不同噪声密度的SAP噪声（宽范围：10\%
 到90\%，非常高的噪声密度范围：91\%到99\%），然后通过这些过滤技术对产生的噪声图像进行过滤，并提取质量指标。
-最后，根据提取的质量指标和重建的图像，分别进行定量和定性分析。图3是用于分析的一些基准图像，以及柯达（24张图
-像）图像。对以下图像的模拟结果进行了讨论:
+最后，根据提取的质量指标和重建的图像，分别进行定量和定性分析。
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/04.eps}    
+    \caption{模拟中用于定性分析的基准图像。∗∗模拟中考虑的柯达图像未在此显示。}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/03.eps}    
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/05.eps}    
+    \caption{在不同的噪声密度水平下，使用各种滤波器过滤的Lena图像的PSNR和SSIM值图}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/06.eps}    
+    \caption{(a) 原始图像 (b) 噪声图像 (95\%) (c) ASWMF (d) DAMF (e) DBAMF (f) FSBMMF (g) RSIF (h) TVWA (i) AFMF (j) ARMF (k) NRSMMF (l) AWM3F}
+\end{figure}
 
+\newpage
+图3是用于分析的一些基准图像，以及柯达(24张图像)图像。对以下图像的模拟结果进行了讨论:
+\begin{itemize}
+    \item 灰度的Lena图像。
+    \item 高分辨率的苹果图像。
+    \item 医学图像肺部。
+    \item 柯达图像。
+\end{itemize}
+
+\subsection{用灰度图像进行模拟结果分析}
+表2概括了不同技术水平的滤波器对Lena图像(256×256)的平均PSNR和SSIM值，噪声密度从宽范围(10\%到90\%)到非常高
+的范围(92\%到98\%)。从质量指标中可以清楚地看到，与其他过滤器相比，AWM3F[23]具有最好的去噪能力。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/07.eps}    
+\end{figure}
+
+\hspace{2em}为了更好地进行比较分析，图4提供了表2的图示。据此可以看出，ARmf[8]在低噪声密度下具有更好的噪声
+去除能力，随着噪声密度的增加，FSBMMF[29]的性能在中等噪声密度下上升到峰值，之后在较高的噪声密度下明显被AWM3F
+[23]所超越。
+
+\hspace{2em}为了进一步进行定性分析，图5显示了使用不同技术过滤后的图像(噪声密度为95\%时中断)。从这些过滤后的
+图像可以看出，使用AWM3F[23]过滤的图像与其他技术相比，保留了更多的面部细节。因此，我们可以得出结论，AWM3F
+[23]对灰度Lena图像具有最佳的性能。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/08.eps}
+    \caption{在不同的噪声密度水平下，通过各种过滤器过滤的高分辨率苹果图像的PSNR和SSIM图}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/09.eps}
+    \caption{(a) 原始图像 (b) 噪声图像 (95\%) (c) ASWMF (d) DAMF (e) DBAMF (f) FSBMMF (g) RSIF (h) TVWA (i) AFMF (j) ARMF (k) NRSMMF (l) AWM3F}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/10.eps}
+\end{figure}
+
+\subsection{用高分辨率的苹果图像进行模拟结果分析}
+表3包括使用现有的一些最好的过滤器过滤的高分辨率苹果图像的PSNR和SSIM值，噪声密度从宽范围(10\%到90\%)到非常高
+的范围(92\%到98\%)不等。该表的质量指标表明，与其他现有的过滤器相比，ARmF[8]的性能非常明显。
+
+\hspace{2em}为了更好地进行比较分析，图6显示了表3中给出的不同噪声密度下的苹果图像的PSNR和SSIM图。考虑到这些
+给定的数字和表格，我们可以看到ARmF[8]在所有级别的噪声密度下都提供了更好的结果，并且在中等噪声密度下显示出明
+显的改善，在更高的噪声密度下也是如此。
+
+\hspace{2em}最后，为了进行主观分析，重建后的滤波图像显示在图7中。从图像中可以看出，与其他使用的滤波器相比，
+ARmF[8]能够保留更多的细节。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/11.eps}
+    \caption{(a) 原始图像 (b) 噪声图像 (95\%) (c) ASWMF (d) DAMF (e) DBAMF (f) FSBMMF (g) RSIF (h) TVWA (i) AFMF (j) ARMF (k) NRSMMF (l) AWM3F}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/12.eps}
+    \caption{在不同的噪声密度水平下，使用各种滤波器过滤的肺部医学图像的PSNR和SSIM值图}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/13.eps}
+\end{figure}
+
+\vspace{1em}
+
+\subsection{医学图像的分析}
+本小节对医学图(肺部图像)的PSNR和SSIM进行了定性和定量分析，其噪声密度从10\%到98\%，间隔不等。表4中总结了质
+量指标。分析给定的性能指标，我们可以清楚地看到，在噪声密度<75\%时，ARmF[8]与AWM3F[23]相比，性能略好。但是，当
+噪声密度超过这个水平时，AWM3F[23]提供了比其他公司更好的性能。
+
+\hspace{2em}最后，在图8中显示了使用各种过滤器过滤后的图像进行主观分析。从模拟图像可以看出，使用AWM3F[23]滤
+波技术过滤的图像保留了最大的细节。因此，可以清楚地看到，从图9中可以看出，AWM3F[23]在其他过滤器中具有最佳的整
+体性能。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/14.eps}
+    \caption{在不同的噪声密度水平下，使用各种滤波器过滤的柯达图像的PSNR和SSIM值图}
+\end{figure}
+
+\subsection{关于柯达图像的分析}
+本小节提供了对柯达图像的PSNR和SSIM的分析，从10\%到98\%的噪声密度的可变间隔。仿真结果见表5和图10。从图10可以
+看出，最初ARmF[8]在55\%的噪声密度之前表现较好。之后，AWM3F[23]与其他滤波器相比，性能稍好。
+
+\section{总结}
+本文总结了各种最先进的盐和胡椒噪声消除技术及其比较分析。通过这一交流，读者可以期望成功地分类各种噪声类型和基
+于其基本算法的各种过滤技术来消除盐和胡椒噪声。不同过滤器的特点及其数学表达式被总结出来并显示在表格中，以便进
+行快速比较分析。此外，一些过滤器的质量指标被评估并总结在表中。在不同的噪声密度下的质量指标图显示，TVWA和AWM3F
+比现有的过滤技术表现更好。最后，重建/过滤后的图像被显示出来进行定性分析。我们可以得出结论，TVWA是所有噪声密度
+下的最佳技术。从结果可以看出，在所有的噪声密度范围内，AWM3F的精度与TVWA相当。这两种过滤技术都使用所选窗口大小
+的三个值（中间值、最小值和最大-最小值）以及它们的权重来恢复像素值。AWM3F使用两组高度相关的无噪声像素进行计算，
+而TVWA不使用。由于自适应滤波器的性能，特别是那些对噪声密度敏感的行为，作者认为对这一子类滤波器的研究将导致更好
+的过滤技术。未来的工作还将涉及如何将这些算法应用于现实生活中，特别是在具有深度效应的图像去噪和三维点去噪中。最
+后，在速度和空间方面优化这些算法也很重要。
+
+\vspace{1em}
+
+\textbf{资金来源}\hspace{2em}这项工作得到了印度帕蒂亚拉的塔帕尔工程技术学院(TIET)的支持。
+
+\vspace{1em}
+
+\textbf{申报}
+
+\vspace{1em}
+
+\textbf{竞争性利益}\hspace{2em}作者没有报告任何利益声明。
+
+\vspace{1em}
+
+\textbf{利益冲突}\hspace{2em}作者声明没有利益冲突。
+
+\vspace{1em}
+
+\textbf{参考文献}
+\bibliography{bibfile}
+
+\vspace{1em}
+\textbf{\Large出版商说明}\hspace{2em}《斯普林格-自然》杂志对出版的地图和机构隶属关系中的管辖要求保持中立。
 \end{document}
