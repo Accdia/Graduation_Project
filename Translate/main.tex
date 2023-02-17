@@ -1,4 +1,4 @@
-\documentclass{article} %article 文档
+\documentclass[12pt]{article} %article 文档
 \usepackage{anyfontsize} %设置字体大小
 \usepackage{ctex}  %使用宏包(为了能够显示汉字)
 \usepackage {amsmath} %数学公式
@@ -22,7 +22,7 @@
 \\Published online:9 April 2022}       %日期
 
 % 设置页面的环境,a4纸张大小，左右上下边距信息
-\usepackage[a4paper,left=10mm,right=10mm,top=15mm,bottom=15mm]{geometry}  
+\usepackage[a4paper,left=10mm,right=10mm,top=10mm,bottom=15mm]{geometry}  
 \begin{document}
 
 \maketitle          %添加这一句才能够显示标题等信息
@@ -306,32 +306,54 @@ RSIF滤波器[28]与MDBUTMF[11]相似，但该滤波器使用三次样条插值�
  ，并且损坏的像素被结果窗口的中值替换。 如果整个 3×3 的窗口都被损坏，则使用 5×5 大小的处理窗口执行上述过程。 
  该算法存在一个主要问题，即在高噪声密度下会出现条纹效应，因为最近的未损坏像素用于中值计算，主要导致直接替换。
 
- \subsubsection{三值加权滤波器(TVWA)}
+\subsubsection{三值加权滤波器(TVWA)}
  TVWA滤波器[17]是另一个加权滤波器。这个滤波器最初采用一个3×3的窗口，根据它们与中间、最大和最小像素值的相关性，
  将所有的噪声像素分成三组。这里使用的权重系数是根据所选窗口而变化的，并由这三组的长度决定。之后，被破坏的像素
  被窗口的加权平均值所取代。由于，这个算法使用了可变的窗口大小，所以如果3×3的窗口完全被破坏，那么窗口大小就会增
  加到5×5，以处理后的破坏像素作为中心像素，并重复上述过程。最大的窗口尺寸是7×7。这个滤波器的主要问题是由于大窗
  口尺寸造成的模糊效应。
 
- \subsubsection{迭代非局部中值滤波器 (INLM)}
+\subsubsection{迭代非局部中值滤波器 (INLM)}
  这个过滤器使用非局部加权平均法与迭代法相结合来寻找被破坏的像素的值[30]。该算法分三步工作。首先，创建一个具有
  噪声像素位置的矩阵。这个矩阵中的值'0'或'1'分别表示噪声像素和无噪声像素。噪声像素通过这个称为NMap的矩阵进行过
  滤。用于过滤的策略是基于开关的中值过滤器。这里，在NMap的帮助下，对噪声像素进行修补。在早期的基础上，具有相似
  性的噪声像素被修补在一起进行INLM处理[30]。
- \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/02.eps}
-    \caption{使用(a)ASWMF,(b)DAMF,(c)FSBMMF,(d)DBAMF,(e)RSIF,(f)TVWA,(g)NRSMMF,(h)AWM3F,(i)ARmF滤波器的去噪图示。黑色操作适用于两个箭头指示器，值已四舍五入到最接近的整数}
-    \label{fig:mean}
-\end{figure}
 
 \subsubsection{基于决策的耦合窗口中值滤波器}
 这种滤波器使用可变的窗口大小来去除图像中的噪声[4]。它是一种独特的去除高密度饱和脉冲噪声的方法。这个过滤器使用
 以下步骤来去除噪声。首先，它检查该像素是否被破坏。然后，取一个3×3的窗口，用窗口的中位数替换噪声像素，排除值为
 '0'或'255'的损坏像素。如果处理窗口没有无噪声像素，则使用2n+1wheren从'1'到'4'递增的方法增加窗口大小。根据窗
-口中存在的噪声类型，被破坏的像素的值被窗口的平均数或中位数所取代。由于它使用了可变窗
+口中存在的噪声类型，被破坏的像素的值被窗口的平均数或中位数所取代。由于它使用了可变窗口大小的概念，在高噪声密
+度范围内，其性能比DBUTMF[11]更好。由于可变窗口大小，在高噪声密度下，图像的质量更好。这个滤波器有一些局限性。
+增加处理窗口的大小，在最终的图像中会出现模糊或弄脏的效果。但由于动态地增加处理窗口的大小来处理被破坏的像素，
+所以比同类的其他过滤器表现得更好。
 
-\begin{table}[]
+\subsubsection{基于决策的非对称修剪修正的winsorized均值滤波器}
+这个滤波器通过使用修剪后的平均值和排序后的一维阵列来去除盐和胡椒的噪声[27]。首先，选择一个以噪声像素为中心的
+3×3窗口，将其转换为一个排序的一维阵列。最后，从后一个阵列中去除噪声。这就产生了两种情况，在第一种情况下，结果
+数组中的一些像素被留下（通过替换修剪过的窗口中最小和最大的值进行不对称的赢余化操作），处理过的噪声像素被不对称
+赢余化操作后得到的数组的平均值替换，从而消除了图像中的噪声。在第二种情况下，剩余的阵列点导致空值，即初始窗口没
+有无噪声像素，为了适应这种情况，初始窗口的平均值被取走，并被放置在所选处理窗口的中心像素（处理像素）。在高噪声
+密度≥95\%的情况下，过滤器的性能会降低，因为更多的被选窗口将是完全没有噪声的，因此其平均值将只是一个随机值。图
+2说明了各种滤波器的去噪过程。
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/02.eps}
+    \caption{使用(a)ASWMF,(b)DAMF,(c)FSBMMF,(d)DBAMF,(e)RSIF,(f)TVWA,(g)NRSMMF,(h)AWM3F\\
+    (i)ARmF滤波器的去噪图示。黑色操作适用于两个箭头指示器，值已四舍五入到最接近的整数}
+    \label{fig:mean}
+\end{figure}
+
+\subsection{过滤器选择}
+表1总结了上述的滤波技术及其数学公式。这些过滤器是在详细分析了该领域的各种研究后选择的。选择的基本标准如下。
+\begin{itemize}
+    \item 方法的复杂性(基础数学到高级数学)。
+    \item 时间的复杂性。
+    \item 基于不同性能指标的仿真结果。
+\end{itemize}
+
+\begin{table}[]\small
     \centering
     \caption{用于去除盐和胡椒噪声的各种滤波器的数学公式}
     \begin{tabular}{@{}p{3cm}lp{8cm}@{}}
@@ -388,10 +410,58 @@ RSIF滤波器[28]与MDBUTMF[11]相似，但该滤波器使用三次样条插值�
      ~ & ~ & $X_{i,j}$是使用预先过滤的结果初始化的输入图像。\\
      \midrule
     \end{tabular}
-    \end{table}
+\end{table}
 
-口大小的概念，在高噪声密
-度范围内，其性能比DBUTMF[11]更好。由于可变窗口大小，在高噪声密度下，图像的质量更好。这个滤波器有一些局限性。
-增加处理窗口的大小，在最终的图像中会出现模糊或弄脏的效果。但由于动态地增加处理窗口的大小来处理被破坏的像素，
-所以比同类的其他过滤器表现得更好。
+\begin{table}[t]\small
+    \caption{(continue)}
+    \begin{tabular}{@{}p{4cm}lp{6cm}@{}}
+    \toprule
+    Fileters & Equation & Explanation \\ 
+    \midrule
+    \multirow{3}{*}{DBCWMF} &
+    \multirow{3}{*}{$\left\{\begin{array}{l}\operatorname{median}\left(T W_n\right) \text { if } W_n \text { has NNP } \forall n<5 \\ \operatorname{mean}\left(W_1\right) ; \text { Otherwise }\end{array}\right.$} &
+        $TW_n$是修剪过的处理窗口，尺寸为(2n+1)X(2n+1)\\
+      ~ & ~ & $W_n$是大小为(2n+1)X(2n+1)的处理窗口 \\
+      ~ & ~ & $NNP$:-非噪声像素
+      \\ 
+    \multirow{3}{*}{MDWMF} &
+    \multirow{3}{*}{$DWM(TW_{7X7})$} &
+               DWM:定向加权中值操作\\
+      ~ & ~ &  以中心像素为中心，可能的方向总数为12个\\
+      ~ & ~ &  $TW_{7X7}$是修剪过的7x7尺寸的窗口。
+      \\
+    \multirow{2}{*}{Mean Filter} &
+    \multirow{2}{*}{$\frac{1}{m n} \sum_{(s, t) \in S} g(s, t)$} &
+              g(s,t)是原始图像\\
+      ~ & ~ & g(s,t)是原始图像
+      \\
+    \multirow{1}{*}{Weighted Mean Filter} &
+    \multirow{1}{*}{$\frac{\sum_{s=-a}^a \sum_{t=-b}^b w(s, t) * g(s+x, y+t)}{\sum_{s=-a}^a \sum_{t=-b}^b w(s, t)}$} &
+              $W_{i,j}$是用户定义大小的处理窗口（最可能是3X3）。\\
+      \\
+    \multirow{1}{*}{Adaptive Median Filter} &
+    \multirow{1}{*}{$median(w_{i,j})$} &
+    NNP:-非噪声像素，RSCI:-递归立方曲线插值法。
+      \\
+    \multirow{2}{*}{RSIF} &
+    \multirow{2}{*} {$P_{i, j}=\left\{\begin{array}{l}\operatorname{RCSI}(y, x, n) \\ \operatorname{mean}\left(W_{3 \times 3}\right), \text { if } W_n \text { has no NNP }\end{array}\right.$} &
+    y=x中像素的指数，x=$W_{3X3}$中的非噪声像素\\
+      ~ & ~ & $W_{3X3}$是尺寸为3X3的处理窗口。 
+      \\
+    \midrule
+    \end{tabular}
+\end{table}
+
+本研究中使用的特定过滤器在不同的噪声密度上显示了显著的模拟结果。
+
+下一节介绍了对这些最先进的盐和胡椒噪声去除技术的比较分析。
+
+\subsection{仿真环境和比较分析}
+下面的小节给出了一些最先进的盐和胡椒噪声去除技术在不同噪声密度的基准图像上的定性和定量分析。所有现有的过滤
+技术都在MALTAB中实现，并以基准输入进行模拟。最初，在这些基准图像中加入不同噪声密度的SAP噪声（宽范围：10\%
+到90\%，非常高的噪声密度范围：91\%到99\%），然后通过这些过滤技术对产生的噪声图像进行过滤，并提取质量指标。
+最后，根据提取的质量指标和重建的图像，分别进行定量和定性分析。图3是用于分析的一些基准图像，以及柯达（24张图
+像）图像。对以下图像的模拟结果进行了讨论:
+
+
 \end{document}
