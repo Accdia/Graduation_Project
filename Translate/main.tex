@@ -15,8 +15,8 @@
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
 % \renewcommand\arraystretch{1.4}
 \renewcommand{\baselinestretch}{1.53}
-\bibliographystyle{plain}
-
+\usepackage[backend=biber]{biblatex}
+\addbibresource{citations.bib}
 \hypersetup{
   colorlinks=true,
   linkcolor=blue,
@@ -138,7 +138,7 @@ IEF是实际图像和损坏图像的MSE与实际图像和重建图像的MSE之�
 \subsubsection{均值滤波器}
 平均值过滤器是最简单的过滤器之一。它是一个基于平均老化技术的线性滤波器。处理窗口通常是一个正方形的形状。这个
 滤波器计算中心噪声像素周围的处理窗口的平均值，中心像素的值被计算的值所取代。损坏图像的平均值在Sxy定义的区域
-内计算[1, 5, 6, 24]。
+内计算\cite{ref1,ref5,ref6,ref24}。
 \begin{equation}
     f(x,y)=\frac{1}{MN}\sum_{(s,t)\in S_{xy}}g(s,t)
 \end{equation}
@@ -611,8 +611,8 @@ ARmF[8]能够保留更多的细节。
 \vspace{1em}
 
 \textbf{参考文献}
-\bibliography{citations.bib}
 
-\vspace{1em}
+\printbibliography
+
 \textbf{出版商说明}\hspace{2em}《斯普林格-自然》杂志对出版的地图和机构隶属关系中的管辖要求保持中立。
 \end{document}

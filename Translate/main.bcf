@@ -95,7 +95,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxcitenames</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxsortnames</bcf:key>
@@ -103,7 +103,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxitems</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minalphanames</bcf:key>
@@ -111,7 +111,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minbibnames</bcf:key>
-      <bcf:value>3</bcf:value>
+      <bcf:value>1</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>mincitenames</bcf:key>
@@ -119,7 +119,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minsortnames</bcf:key>
-      <bcf:value>3</bcf:value>
+      <bcf:value>1</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minitems</bcf:key>
@@ -163,7 +163,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortingtemplatename</bcf:key>
-      <bcf:value>none</bcf:value>
+      <bcf:value>nty</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortsets</bcf:key>
@@ -195,7 +195,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>useprefix</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>useafterword</bcf:key>
@@ -259,7 +259,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>usetranslator</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>useshortauthor</bcf:key>
@@ -321,7 +321,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxcitenames</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxsortnames</bcf:key>
@@ -329,7 +329,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxitems</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minalphanames</bcf:key>
@@ -337,7 +337,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minbibnames</bcf:key>
-      <bcf:value>3</bcf:value>
+      <bcf:value>1</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>mincitenames</bcf:key>
@@ -345,7 +345,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minsortnames</bcf:key>
-      <bcf:value>3</bcf:value>
+      <bcf:value>1</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minitems</bcf:key>
@@ -405,7 +405,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>useprefix</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>useafterword</bcf:key>
@@ -469,7 +469,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>usetranslator</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>useshortauthor</bcf:key>
@@ -543,15 +543,6 @@
     <bcf:option datatype="string">datelabel</bcf:option>
     <bcf:option datatype="string">backrefstyle</bcf:option>
     <bcf:option datatype="string">arxiv</bcf:option>
-    <bcf:option datatype="string">mergedate</bcf:option>
-    <bcf:option datatype="string">gblanorder</bcf:option>
-    <bcf:option datatype="string">gbcitelocal</bcf:option>
-    <bcf:option datatype="string">gbbiblocal</bcf:option>
-    <bcf:option datatype="string">gblocal</bcf:option>
-    <bcf:option datatype="string">gbbiblabel</bcf:option>
-    <bcf:option datatype="string">gbnamefmt</bcf:option>
-    <bcf:option datatype="string">gbalign</bcf:option>
-    <bcf:option datatype="string">gbcitelabel</bcf:option>
     <bcf:option datatype="boolean">familyinits</bcf:option>
     <bcf:option datatype="boolean">giveninits</bcf:option>
     <bcf:option datatype="boolean">prefixinits</bcf:option>
@@ -635,25 +626,6 @@
     <bcf:option datatype="boolean">eprint</bcf:option>
     <bcf:option datatype="boolean">related</bcf:option>
     <bcf:option datatype="boolean">subentry</bcf:option>
-    <bcf:option datatype="boolean">citexref</bcf:option>
-    <bcf:option datatype="boolean">gbmedium</bcf:option>
-    <bcf:option datatype="boolean">gbannote</bcf:option>
-    <bcf:option datatype="boolean">gbfieldtype</bcf:option>
-    <bcf:option datatype="boolean">gbfnperpage</bcf:option>
-    <bcf:option datatype="boolean">gbfootbib</bcf:option>
-    <bcf:option datatype="boolean">gbstyle</bcf:option>
-    <bcf:option datatype="boolean">gbtype</bcf:option>
-    <bcf:option datatype="boolean">gbcodegbk</bcf:option>
-    <bcf:option datatype="boolean">gbstrict</bcf:option>
-    <bcf:option datatype="boolean">gbtitlelink</bcf:option>
-    <bcf:option datatype="boolean">gbctexset</bcf:option>
-    <bcf:option datatype="boolean">gbnoauthor</bcf:option>
-    <bcf:option datatype="boolean">gbfieldstd</bcf:option>
-    <bcf:option datatype="boolean">gbpub</bcf:option>
-    <bcf:option datatype="boolean">gbpunctin</bcf:option>
-    <bcf:option datatype="boolean">subentrycomp</bcf:option>
-    <bcf:option datatype="boolean">gblabelref</bcf:option>
-    <bcf:option datatype="boolean">gbcitecomp</bcf:option>
     <bcf:option datatype="boolean">bibtexcaseprotection</bcf:option>
     <bcf:option datatype="integer">mincrossrefs</bcf:option>
     <bcf:option datatype="integer">minxrefs</bcf:option>
@@ -736,7 +708,6 @@
     <bcf:option datatype="boolean">eprint</bcf:option>
     <bcf:option datatype="boolean">related</bcf:option>
     <bcf:option datatype="boolean">subentry</bcf:option>
-    <bcf:option datatype="boolean">subentrycomp</bcf:option>
     <bcf:option datatype="boolean">bibtexcaseprotection</bcf:option>
     <bcf:option datatype="xml">labelalphatemplate</bcf:option>
     <bcf:option datatype="xml">translit</bcf:option>
@@ -824,7 +795,6 @@
     <bcf:option datatype="boolean" backendout="1">eprint</bcf:option>
     <bcf:option datatype="boolean" backendout="1">related</bcf:option>
     <bcf:option datatype="boolean" backendout="1">subentry</bcf:option>
-    <bcf:option datatype="boolean" backendout="1">subentrycomp</bcf:option>
     <bcf:option datatype="boolean" backendout="1">bibtexcaseprotection</bcf:option>
     <bcf:option datatype="integer" backendin="maxcitenames,maxbibnames,maxsortnames">maxnames</bcf:option>
     <bcf:option datatype="integer" backendin="mincitenames,minbibnames,minsortnames">minnames</bcf:option>
@@ -883,525 +853,6 @@
   </bcf:datafieldset>
   <!-- SOURCEMAP -->
   <bcf:sourcemap>
-    <bcf:maps datatype="bibtex" level="user">
-      <bcf:map>
-        <bcf:map_step map_field_source="author" map_final="1"/>
-        <bcf:map_step map_field_set="namea" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="editor" map_final="1"/>
-        <bcf:map_step map_field_set="namea" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="translator" map_final="1"/>
-        <bcf:map_step map_field_set="namea" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="location" map_final="1"/>
-        <bcf:map_step map_field_set="address" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="address" map_final="1"/>
-        <bcf:map_step map_field_set="location" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="mark" map_final="1"/>
-        <bcf:map_step map_field_set="usera" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="nameformat" map_match="lowercase" map_final="1"/>
-        <bcf:map_step map_field_set="namefmtid" map_field_value="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="nameformat" map_match="givenahead" map_final="1"/>
-        <bcf:map_step map_field_set="namefmtid" map_field_value="2"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="nameformat" map_match="familyahead" map_final="1"/>
-        <bcf:map_step map_field_set="namefmtid" map_field_value="3"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="nameformat" map_match="pinyin" map_final="1"/>
-        <bcf:map_step map_field_set="namefmtid" map_field_value="4"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="nameformat" map_match="quanpin" map_final="1"/>
-        <bcf:map_step map_field_set="namefmtid" map_field_value="6"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>article</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="J"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>periodical</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="J"/>
-        <bcf:map_step map_field_source="author"/>
-        <bcf:map_step map_field_set="editor" map_origfieldval="1"/>
-        <bcf:map_step map_field_source="publisher"/>
-        <bcf:map_step map_field_set="institution" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:per_type>newspaper</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="N"/>
-        <bcf:map_step map_field_set="entrysubtype" map_field_value="news"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:per_type>article</bcf:per_type>
-        <bcf:map_step map_field_source="note" map_match="(n|N)(e|E)(w|W)(s|S)" map_final="1"/>
-        <bcf:map_step map_field_set="usera" map_field_value="N"/>
-        <bcf:map_step map_field_set="entrysubtype" map_field_value="news"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:per_type>article</bcf:per_type>
-        <bcf:map_step map_field_source="note" map_match="(n|N)(e|E)(w|W)(s|S)(p|P)(a|A)(p|P)(e|E)(r|R)" map_final="1"/>
-        <bcf:map_step map_field_set="usera" map_field_value="N"/>
-        <bcf:map_step map_field_set="entrysubtype" map_field_value="news"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:per_type>article</bcf:per_type>
-        <bcf:map_step map_field_source="entrysubtype" map_match="(n|N)(e|E)(w|W)(s|S)(p|P)(a|A)(p|P)(e|E)(r|R)" map_final="1"/>
-        <bcf:map_step map_field_set="usera" map_field_value="N"/>
-        <bcf:map_step map_field_set="entrysubtype" map_field_value="news"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:per_type>article</bcf:per_type>
-        <bcf:map_step map_field_source="entrysubtype" map_match="(n|N)(e|E)(w|W)(s|S)" map_final="1"/>
-        <bcf:map_step map_field_set="usera" map_field_value="N"/>
-        <bcf:map_step map_field_set="entrysubtype" map_field_value="news"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>database</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="DB"/>
-        <bcf:map_step map_field_source="publisher"/>
-        <bcf:map_step map_field_set="institution" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>dataset</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="DS"/>
-        <bcf:map_step map_field_source="publisher"/>
-        <bcf:map_step map_field_set="institution" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>software</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="CP"/>
-        <bcf:map_step map_field_source="publisher"/>
-        <bcf:map_step map_field_set="institution" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>map</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="CM"/>
-        <bcf:map_step map_field_source="publisher"/>
-        <bcf:map_step map_field_set="institution" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>archive</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="A"/>
-        <bcf:map_step map_field_source="publisher"/>
-        <bcf:map_step map_field_set="institution" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>misc</bcf:per_type>
-        <bcf:map_step map_field_source="url" map_final="1"/>
-        <bcf:map_step map_type_source="misc" map_type_target="online"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>misc</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="Z"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>book</bcf:per_type>
-        <bcf:per_type>inbook</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="M"/>
-        <bcf:map_step map_field_source="version"/>
-        <bcf:map_step map_field_set="edition" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:per_type>standard</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="S"/>
-        <bcf:map_step map_field_set="entrysubtype" map_field_value="standard"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:per_type>inbook</bcf:per_type>
-        <bcf:per_type>book</bcf:per_type>
-        <bcf:map_step map_field_source="entrysubtype" map_match="(s|S)(t|T)(a|A)(n|N)(d|D)(a|A)(r|R)(d|D)" map_final="1"/>
-        <bcf:map_step map_field_set="usera" map_field_value="S"/>
-        <bcf:map_step map_field_set="entrysubtype" map_field_value="standard"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:per_type>inbook</bcf:per_type>
-        <bcf:per_type>book</bcf:per_type>
-        <bcf:map_step map_field_source="note" map_match="(s|S)(t|T)(a|A)(n|N)(d|D)(a|A)(r|R)(d|D)" map_final="1"/>
-        <bcf:map_step map_field_set="usera" map_field_value="S"/>
-        <bcf:map_step map_field_set="entrysubtype" map_field_value="standard"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>patent</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="P"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>inproceedings</bcf:per_type>
-        <bcf:per_type>conference</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="C"/>
-        <bcf:map_step map_field_source="institution"/>
-        <bcf:map_step map_field_set="publisher" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>proceedings</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="C"/>
-        <bcf:map_step map_field_source="institution"/>
-        <bcf:map_step map_field_set="publisher" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>incollection</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="G"/>
-        <bcf:map_step map_field_source="institution"/>
-        <bcf:map_step map_field_set="publisher" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>collection</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="G"/>
-        <bcf:map_step map_field_source="institution"/>
-        <bcf:map_step map_field_set="publisher" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>report</bcf:per_type>
-        <bcf:per_type>techreport</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="R"/>
-        <bcf:map_step map_field_source="institution"/>
-        <bcf:map_step map_field_set="publisher" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>thesis</bcf:per_type>
-        <bcf:per_type>mastersthesis</bcf:per_type>
-        <bcf:per_type>phdthesis</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="D"/>
-        <bcf:map_step map_field_source="publisher"/>
-        <bcf:map_step map_field_set="institution" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>online</bcf:per_type>
-        <bcf:per_type>electronic</bcf:per_type>
-        <bcf:per_type>www</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="EB"/>
-        <bcf:map_step map_field_source="publisher"/>
-        <bcf:map_step map_field_set="institution" map_origfieldval="1"/>
-        <bcf:map_step map_field_source="organization"/>
-        <bcf:map_step map_field_set="institution" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>manual</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="A"/>
-        <bcf:map_step map_field_source="edition"/>
-        <bcf:map_step map_field_set="version" map_origfieldval="1"/>
-        <bcf:map_step map_field_source="publisher"/>
-        <bcf:map_step map_field_set="institution" map_origfieldval="1"/>
-        <bcf:map_step map_field_source="organization"/>
-        <bcf:map_step map_field_set="institution" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>unpublished</bcf:per_type>
-        <bcf:map_step map_field_set="usera" map_field_value="Z"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:map_step map_field_source="author" map_match="([\x{2FF0}-\x{9FA5}])\,\s*" map_replace="$1"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:map_step map_field_source="editor" map_match="([\x{2FF0}-\x{9FA5}])\,\s*" map_replace="$1"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:map_step map_field_source="translator" map_match="([\x{2FF0}-\x{9FA5}])\,\s*" map_replace="$1"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:map_step map_field_source="bookauthor" map_match="([\x{2FF0}-\x{9FA5}])\,\s*" map_replace="$1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="year"/>
-        <bcf:map_step map_field_set="date" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="entrykey"/>
-        <bcf:map_step map_field_set="keywords" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="title" map_match="[\x{0100}-\x{017F}]" map_final="1"/>
-        <bcf:map_step map_field_set="userd" map_field_value="french"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="title" map_match="[\x{0400}-\x{052F}]" map_final="1"/>
-        <bcf:map_step map_field_set="userd" map_field_value="russian"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="title" map_match="[\x{3040}-\x{30FF}\x{31F0}-\x{31FF}]" map_final="1"/>
-        <bcf:map_step map_field_set="userd" map_field_value="japanese"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="title" map_match="[\x{1100}-\x{11FF}\x{3130}-\x{318F}\x{AC00}-\x{D7AF}]" map_final="1"/>
-        <bcf:map_step map_field_set="userd" map_field_value="korean"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="title" map_match="[\x{2FF0}-\x{9FA5}]" map_final="1"/>
-        <bcf:map_step map_field_set="userd" map_field_value="chinese"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="title" map_final="1"/>
-        <bcf:map_step map_field_set="userd" map_field_value="english"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="author" map_match="[\x{0100}-\x{017F}]" map_final="1"/>
-        <bcf:map_step map_field_set="userf" map_field_value="french"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="author" map_match="[\x{0400}-\x{052F}]" map_final="1"/>
-        <bcf:map_step map_field_set="userf" map_field_value="russian"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="author" map_match="[\x{3040}-\x{30FF}\x{31F0}-\x{31FF}]" map_final="1"/>
-        <bcf:map_step map_field_set="userf" map_field_value="japanese"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="author" map_match="[\x{1100}-\x{11FF}\x{3130}-\x{318F}\x{AC00}-\x{D7AF}]" map_final="1"/>
-        <bcf:map_step map_field_set="userf" map_field_value="korean"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="author" map_match="[\x{2FF0}-\x{9FA5}]" map_final="1"/>
-        <bcf:map_step map_field_set="userf" map_field_value="chinese"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="author" map_final="1"/>
-        <bcf:map_step map_field_set="userf" map_field_value="english"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="translator" map_match="[\x{0100}-\x{017F}]" map_final="1"/>
-        <bcf:map_step map_field_set="usere" map_field_value="french"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="translator" map_match="[\x{0400}-\x{052F}]" map_final="1"/>
-        <bcf:map_step map_field_set="usere" map_field_value="russian"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="translator" map_match="[\x{3040}-\x{30FF}\x{31F0}-\x{31FF}]" map_final="1"/>
-        <bcf:map_step map_field_set="usere" map_field_value="japanese"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="translator" map_match="[\x{1100}-\x{11FF}\x{3130}-\x{318F}\x{AC00}-\x{D7AF}]" map_final="1"/>
-        <bcf:map_step map_field_set="usere" map_field_value="korean"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="translator" map_match="[\x{2FF0}-\x{9FA5}]" map_final="1"/>
-        <bcf:map_step map_field_set="usere" map_field_value="chinese"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="translator" map_final="1"/>
-        <bcf:map_step map_field_set="usere" map_field_value="english"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="editor" map_match="[\x{0100}-\x{017F}]" map_final="1"/>
-        <bcf:map_step map_field_set="userc" map_field_value="french"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="editor" map_match="[\x{0400}-\x{052F}]" map_final="1"/>
-        <bcf:map_step map_field_set="userc" map_field_value="russian"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="editor" map_match="[\x{3040}-\x{30FF}\x{31F0}-\x{31FF}]" map_final="1"/>
-        <bcf:map_step map_field_set="userc" map_field_value="japanese"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="editor" map_match="[\x{1100}-\x{11FF}\x{3130}-\x{318F}\x{AC00}-\x{D7AF}]" map_final="1"/>
-        <bcf:map_step map_field_set="userc" map_field_value="korean"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="editor" map_match="[\x{2FF0}-\x{9FA5}]" map_final="1"/>
-        <bcf:map_step map_field_set="userc" map_field_value="chinese"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="editor" map_final="1"/>
-        <bcf:map_step map_field_set="userc" map_field_value="english"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="bookauthor" map_match="[\x{0100}-\x{017F}]" map_final="1"/>
-        <bcf:map_step map_field_set="userb" map_field_value="french"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="bookauthor" map_match="[\x{0400}-\x{052F}]" map_final="1"/>
-        <bcf:map_step map_field_set="userb" map_field_value="russian"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="bookauthor" map_match="[\x{3040}-\x{30FF}\x{31F0}-\x{31FF}]" map_final="1"/>
-        <bcf:map_step map_field_set="userb" map_field_value="japanese"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="bookauthor" map_match="[\x{1100}-\x{11FF}\x{3130}-\x{318F}\x{AC00}-\x{D7AF}]" map_final="1"/>
-        <bcf:map_step map_field_set="userb" map_field_value="korean"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="bookauthor" map_match="[\x{2FF0}-\x{9FA5}]" map_final="1"/>
-        <bcf:map_step map_field_set="userb" map_field_value="chinese"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="bookauthor" map_final="1"/>
-        <bcf:map_step map_field_set="userb" map_field_value="english"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="userd" map_final="1"/>
-        <bcf:map_step map_field_set="language" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="userf" map_final="1"/>
-        <bcf:map_step map_field_set="language" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_set="language" map_field_value="english"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="language"/>
-        <bcf:map_step map_field_set="userd" map_origfieldval="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="language" map_match="(e|E)(n|N)(g|G)(l|L)(i|I)(s|S)(h|H)" map_final="1"/>
-        <bcf:map_step map_field_set="langid" map_field_value="english"/>
-        <bcf:map_step map_field_set="languageid" map_field_value="english"/>
-        <bcf:map_step map_field_set="lansortorder" map_field_value="4"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="language" map_match="(r|R)(u|U)(s|S)(s|S)(i|I)(a|A)(n|N)" map_final="1"/>
-        <bcf:map_step map_field_set="langid" map_field_value="russian"/>
-        <bcf:map_step map_field_set="languageid" map_field_value="russian"/>
-        <bcf:map_step map_field_set="lansortorder" map_field_value="6"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="language" map_match="(f|F)(r|R)(e|E)(n|N)(c|C)(h|H)" map_final="1"/>
-        <bcf:map_step map_field_set="langid" map_field_value="french"/>
-        <bcf:map_step map_field_set="languageid" map_field_value="french"/>
-        <bcf:map_step map_field_set="lansortorder" map_field_value="5"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="language" map_match="(c|C)(h|H)(i|I)(n|N)(e|E)(s|S)(e|E)" map_final="1"/>
-        <bcf:map_step map_field_set="langid" map_field_value="english"/>
-        <bcf:map_step map_field_set="languageid" map_field_value="chinese"/>
-        <bcf:map_step map_field_set="lansortorder" map_field_value="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="language" map_match="(j|J)(a|A)(p|P)(a|A)(n|N)(e|E)(s|S)(e|E)" map_final="1"/>
-        <bcf:map_step map_field_set="langid" map_field_value="english"/>
-        <bcf:map_step map_field_set="languageid" map_field_value="japanese"/>
-        <bcf:map_step map_field_set="lansortorder" map_field_value="2"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_field_source="language" map_match="(k|K)(o|O)(r|R)(e|E)(a|A)(n|N)" map_final="1"/>
-        <bcf:map_step map_field_set="langid" map_field_value="english"/>
-        <bcf:map_step map_field_set="languageid" map_field_value="korean"/>
-        <bcf:map_step map_field_set="lansortorder" map_field_value="3"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:map_step map_field_source="howpublished" map_match="([^\\])\%" map_replace="$1\\\%"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:map_step map_field_source="abstract" map_match="([^\\])\%" map_replace="$1\\\%"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:map_step map_field_source="howpublished" map_match="([^\\])\#" map_replace="$1\\\#"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:map_step map_field_source="abstract" map_match="([^\\])\#" map_replace="$1\\\#"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:map_step map_field_source="abstract" map_match="([^\\])\x26" map_replace="$1\\\x26"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:map_step map_field_source="howpublished" map_match="([^\\])\x26" map_replace="$1\\\x26"/>
-      </bcf:map>
-    </bcf:maps>
-    <bcf:maps datatype="bibtex" level="style">
-      <bcf:map>
-        <bcf:map_step map_field_source="booktitle" map_final="1"/>
-        <bcf:map_step map_type_source="standard" map_type_target="inbook" map_final="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_type_source="standard" map_type_target="book" map_final="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:map_step map_type_source="techreport" map_type_target="report" map_final="1"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>report</bcf:per_type>
-        <bcf:map_step map_field_set="location" map_field_value=""/>
-        <bcf:map_step map_field_source="location" map_notmatch="." map_final="1"/>
-        <bcf:map_step map_field_source="url" map_final="1"/>
-        <bcf:map_step map_type_source="report" map_type_target="online"/>
-        <bcf:map_step map_field_set="entrysubtype" map_field_value="report"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>thesis</bcf:per_type>
-        <bcf:map_step map_field_set="location" map_field_value=""/>
-        <bcf:map_step map_field_source="location" map_notmatch="." map_final="1"/>
-        <bcf:map_step map_field_source="url" map_final="1"/>
-        <bcf:map_step map_type_source="thesis" map_type_target="online"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>manual</bcf:per_type>
-        <bcf:map_step map_field_set="location" map_field_value=""/>
-        <bcf:map_step map_field_source="location" map_notmatch="." map_final="1"/>
-        <bcf:map_step map_field_source="url" map_final="1"/>
-        <bcf:map_step map_type_source="manual" map_type_target="online"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>unpublished</bcf:per_type>
-        <bcf:map_step map_field_set="location" map_field_value=""/>
-        <bcf:map_step map_field_source="location" map_notmatch="." map_final="1"/>
-        <bcf:map_step map_field_source="url" map_final="1"/>
-        <bcf:map_step map_type_source="unpublished" map_type_target="online"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>database</bcf:per_type>
-        <bcf:map_step map_field_set="location" map_field_value=""/>
-        <bcf:map_step map_field_source="location" map_notmatch="." map_final="1"/>
-        <bcf:map_step map_field_source="url" map_final="1"/>
-        <bcf:map_step map_type_source="databasetypetarget"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>dataset</bcf:per_type>
-        <bcf:map_step map_field_set="location" map_field_value=""/>
-        <bcf:map_step map_field_source="location" map_notmatch="." map_final="1"/>
-        <bcf:map_step map_field_source="url" map_final="1"/>
-        <bcf:map_step map_type_source="dataset" map_type_target="online"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>software</bcf:per_type>
-        <bcf:map_step map_field_set="location" map_field_value=""/>
-        <bcf:map_step map_field_source="location" map_notmatch="." map_final="1"/>
-        <bcf:map_step map_field_source="url" map_final="1"/>
-        <bcf:map_step map_type_source="software" map_type_target="online"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>map</bcf:per_type>
-        <bcf:map_step map_field_set="location" map_field_value=""/>
-        <bcf:map_step map_field_source="location" map_notmatch="." map_final="1"/>
-        <bcf:map_step map_field_source="url" map_final="1"/>
-        <bcf:map_step map_type_source="map" map_type_target="online"/>
-      </bcf:map>
-      <bcf:map>
-        <bcf:per_type>archive</bcf:per_type>
-        <bcf:map_step map_field_set="location" map_field_value=""/>
-        <bcf:map_step map_field_source="location" map_notmatch="." map_final="1"/>
-        <bcf:map_step map_field_source="url" map_final="1"/>
-        <bcf:map_step map_type_source="archive" map_type_target="online"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1">
-        <bcf:map_step map_field_source="entrysubtype" map_final="1"/>
-        <bcf:map_step map_field_set="keywords" map_field_value="," map_append="1"/>
-        <bcf:map_step map_field_set="keywords" map_origfieldval="1" map_append="1"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1" map_foreach="title,booktitle,journaltitle,journal,publisher,address,location,institution,organization">
-        <bcf:map_step map_field_source="$MAPLOOP" map_match="([^\\])\#" map_replace="$1\\\#"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1" map_foreach="title,booktitle,journaltitle,journal,publisher,address,location,institution,organization">
-        <bcf:map_step map_field_source="$MAPLOOP" map_match="([^\\])\%" map_replace="$1\\\%"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1" map_foreach="title,booktitle,journaltitle,journal,publisher,address,location,institution,organization">
-        <bcf:map_step map_field_source="$MAPLOOP" map_match="([^\\])\x26" map_replace="$1\\\x26"/>
-      </bcf:map>
-    </bcf:maps>
     <bcf:maps datatype="bibtex" level="driver">
       <bcf:map>
         <bcf:map_step map_field_set="day" map_null="1"/>
@@ -1668,7 +1119,6 @@
       <bcf:entrytype>unpublished</bcf:entrytype>
       <bcf:entrytype>video</bcf:entrytype>
       <bcf:entrytype skip_output="true">xdata</bcf:entrytype>
-      <bcf:entrytype>newspaper</bcf:entrytype>
     </bcf:entrytypes>
     <bcf:fields>
       <bcf:field fieldtype="field" datatype="integer">sortyear</bcf:field>
@@ -1873,13 +1323,6 @@
       <bcf:field fieldtype="field" format="xsv" datatype="option" skip_output="true">relatedoptions</bcf:field>
       <bcf:field fieldtype="field" datatype="range">pages</bcf:field>
       <bcf:field fieldtype="field" datatype="code">execute</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">mark</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">medium</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">nameformat</bcf:field>
-      <bcf:field fieldtype="field" datatype="integer">namefmtid</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">shortbooktitle</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">lansortorder</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">languageid</bcf:field>
     </bcf:fields>
     <bcf:entryfields>
       <bcf:field>abstract</bcf:field>
@@ -2898,14 +2341,55 @@
   <!-- CITATION DATA -->
   <!-- SECTION 0 -->
   <bcf:bibdata section="0">
+    <bcf:datasource type="file" datatype="bibtex" glob="false">citations.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+    <bcf:citekey order="1">ref1</bcf:citekey>
+    <bcf:citekey order="1">ref5</bcf:citekey>
+    <bcf:citekey order="1">ref6</bcf:citekey>
+    <bcf:citekey order="1">ref24</bcf:citekey>
+    <bcf:citekey order="2">ref1</bcf:citekey>
+    <bcf:citekey order="3">ref5</bcf:citekey>
+    <bcf:citekey order="4">ref6</bcf:citekey>
+    <bcf:citekey order="5">ref24</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
-  <bcf:sortingtemplate name="none">
+  <bcf:sortingtemplate name="nty">
     <bcf:sort order="1">
-      <bcf:sortitem order="1">citeorder</bcf:sortitem>
+      <bcf:sortitem order="1">presort</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="2" final="1">
+      <bcf:sortitem order="1">sortkey</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="3">
+      <bcf:sortitem order="1">sortname</bcf:sortitem>
+      <bcf:sortitem order="2">author</bcf:sortitem>
+      <bcf:sortitem order="3">editor</bcf:sortitem>
+      <bcf:sortitem order="4">translator</bcf:sortitem>
+      <bcf:sortitem order="5">sorttitle</bcf:sortitem>
+      <bcf:sortitem order="6">title</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="4">
+      <bcf:sortitem order="1">sorttitle</bcf:sortitem>
+      <bcf:sortitem order="2">title</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="5">
+      <bcf:sortitem order="1">sortyear</bcf:sortitem>
+      <bcf:sortitem order="2">year</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="6">
+      <bcf:sortitem order="1">volume</bcf:sortitem>
+      <bcf:sortitem literal="1" order="2">0</bcf:sortitem>
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="nty/global//global/global"
+                type="entry"
+                sortingtemplatename="nty"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global">
+  </bcf:datalist>
 </bcf:controlfile>
