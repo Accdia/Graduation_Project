@@ -1,34 +1,66 @@
-# 这是一个示例 Python 脚本。
-
-# 按 Shift+F10 执行或将其替换为您的代码。
-# 按 双击 Shift 在所有地方搜索类、文件、工具窗口、操作和设置。
-import numpy as np
-import matplotlib.pyplot as plt
 import cv2
-from scipy import ndimage
-import os
+import numpy as np
+from matplotlib import pyplot as plt
+
+
+def low_pass_filter(img, sigma):
+    rows, cols = img.shape
+    crow, ccol = rows // 2, cols // 2
+    x = np.linspace(0, cols - 1, cols)
+    y = np.linspace(0, rows - 1, rows)
+    xv, yv = np.meshgrid(x, y)
+    d = np.sqrt((xv - ccol) ** 2 + (yv - crow) ** 2)
+    kernel = cv2.getGaussianKernel(rows, sigma) * cv2.getGaussianKernel(cols, sigma).T
+    kernel = kernel / np.max(kernel)
+    fft_img = np.fft.fft2(img)
+    fft_shifted = np.fft.fftshift(fft_img)
+    filtered = fft_shifted * kernel
+    filtered_shifted = np.fft.ifftshift(filtered)
+    filtered_img = np.fft.ifft2(filtered_shifted)
+    filtered_img = np.abs(filtered_img)
+    return filtered_img
+
 
 if __name__ == '__main__':
-    img = cv2.imread('image.jpg')
+    # Load the image
+    img = cv2.imread('image.jpg', 0)
 
-    # Convert the image to grayscale
-    img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    # Apply the 2D Fourier Transform to the image
+    f = np.fft.fft2(img)
 
-    # Apply a 2D Gaussian filter with a kernel size of 5
-    filtered_img = ndimage.gaussian_filter(img_gray, sigma=5)
-    cv2.imwrite('filtered_image.jpg', filtered_img)
+    # Shift the zero-frequency component to the center of the spectrum
+    fshift = np.fft.fftshift(f)
 
-    filesize_orig = os.path.getsize('image.jpg')
-    filesize_filtered = os.path.getsize('filtered_image.jpg')
-    reduction_percent = (filesize_orig - filesize_filtered) / filesize_orig * 100
-    print('Original Image Size: {} bytes'.format(filesize_orig))
-    print('Filtered Image Size: {} bytes'.format(filesize_filtered))
-    print('Reduction: {:.2f}%'.format(reduction_percent))
+    # Compute the magnitude spectrum (absolute value) of the Fourier Transform
+    magnitude_spectrum = 20 * np.log(np.abs(fshift))
 
-    # Display the original and filtered images
-    # fig, axs = plt.subplots(1, 2, figsize=(10, 5))
-    # axs[0].imshow(img_gray, cmap='gray')
-    # axs[0].set_title('Original Image')
-    # axs[1].imshow(filtered_img, cmap='gray')
-    # axs[1].set_title('Filtered Image')
-    # plt.show()
+    # Display the magnitude spectrum using Matplotlib
+    plt.imshow(magnitude_spectrum, cmap='gray')
+    plt.title('Magnitude Spectrum'), plt.xticks([]), plt.yticks([])
+    plt.show()
+
+    # Apply the low-pass filter to the magnitude spectrum of the Fourier Transform of the image
+    sigma = 20
+    filtered_spectrum = low_pass_filter(magnitude_spectrum, sigma)
+
+    # Display the filtered magnitude spectrum using Matplotlib
+    plt.imshow(filtered_spectrum, cmap='gray')
+    plt.title('Filtered Magnitude Spectrum'), plt.xticks([]), plt.yticks([])
+    plt.show()
+
+    # Compute the filtered image by taking the inverse Fourier Transform of the filtered frequency domain representation
+    filtered_fshift = np.fft.ifftshift(filtered_spectrum)
+    filtered_f = np.fft.ifft2(filtered_fshift)
+    filtered_img = np.abs(filtered_f)
+
+    # Display the filtered image using Matplotlib
+    plt.imshow(filtered_img, cmap='gray')
+    plt.title('Filtered Image'), plt.xticks([]), plt.yticks([])
+    plt.show()
+
+    # Display the original and filtered image side by side using Matplotlib
+    plt.subplot(121), plt.imshow(img, cmap='gray')
+    plt.title('Original Image'), plt.xticks([]), plt.yticks([])
+    plt.subplot(122), plt.imshow(filtered_img, cmap='gray')
+    plt.title('Filtered Image'), plt.xticks([]), plt.yticks([])
+    plt.show()
