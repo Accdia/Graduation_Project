@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bcf:controlfile version="3.8" bltxversion="3.17" xmlns:bcf="https://sourceforge.net/projects/biblatex">
+<bcf:controlfile version="3.9" bltxversion="3.18b" xmlns:bcf="https://sourceforge.net/projects/biblatex">
   <!-- BIBER OPTIONS -->
   <bcf:options component="biber" type="global">
     <bcf:option type="singlevalued">
@@ -135,6 +135,10 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>nosortothers</bcf:key>
+      <bcf:value>0</bcf:value>
+    </bcf:option>
+    <bcf:option type="singlevalued">
+      <bcf:key>pluralothers</bcf:key>
       <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
@@ -372,11 +376,11 @@
       <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
-      <bcf:key>skiplab</bcf:key>
+      <bcf:key>skipbiblist</bcf:key>
       <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
-      <bcf:key>skipbiblist</bcf:key>
+      <bcf:key>skiplab</bcf:key>
       <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
@@ -599,6 +603,7 @@
     <bcf:option datatype="boolean">labeltitle</bcf:option>
     <bcf:option datatype="boolean">labeltitleyear</bcf:option>
     <bcf:option datatype="boolean">labeldateparts</bcf:option>
+    <bcf:option datatype="boolean">pluralothers</bcf:option>
     <bcf:option datatype="boolean">nohashothers</bcf:option>
     <bcf:option datatype="boolean">nosortothers</bcf:option>
     <bcf:option datatype="boolean">noroman</bcf:option>
@@ -1046,7 +1051,7 @@
     <bcf:namepart order="3">given</bcf:namepart>
   </bcf:uniquenametemplate>
   <!-- SORTING NAME KEY TEMPLATES -->
-  <bcf:sortingnamekeytemplate name="global">
+  <bcf:sortingnamekeytemplate name="global" visibility="sort">
     <bcf:keypart order="1">
       <bcf:part type="namepart" order="1" use="1">prefix</bcf:part>
       <bcf:part type="namepart" order="2">family</bcf:part>
@@ -2347,116 +2352,84 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">citations.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">ref1</bcf:citekey>
-    <bcf:citekey order="1">ref5</bcf:citekey>
-    <bcf:citekey order="1">ref6</bcf:citekey>
-    <bcf:citekey order="1">ref24</bcf:citekey>
-    <bcf:citekey order="2">ref29</bcf:citekey>
-    <bcf:citekey order="2">ref32</bcf:citekey>
-    <bcf:citekey order="3">ref2</bcf:citekey>
-    <bcf:citekey order="3">ref3</bcf:citekey>
-    <bcf:citekey order="3">ref4</bcf:citekey>
-    <bcf:citekey order="3">ref7</bcf:citekey>
-    <bcf:citekey order="3">ref10</bcf:citekey>
-    <bcf:citekey order="3">ref11</bcf:citekey>
-    <bcf:citekey order="3">ref12</bcf:citekey>
-    <bcf:citekey order="3">ref16</bcf:citekey>
-    <bcf:citekey order="3">ref18</bcf:citekey>
-    <bcf:citekey order="3">ref19</bcf:citekey>
-    <bcf:citekey order="3">ref20</bcf:citekey>
-    <bcf:citekey order="3">ref29</bcf:citekey>
-    <bcf:citekey order="3">ref31</bcf:citekey>
-    <bcf:citekey order="4">ref12</bcf:citekey>
-    <bcf:citekey order="4">ref20</bcf:citekey>
-    <bcf:citekey order="4">ref29</bcf:citekey>
-    <bcf:citekey order="4">ref31</bcf:citekey>
-    <bcf:citekey order="5">ref12</bcf:citekey>
-    <bcf:citekey order="5">ref20</bcf:citekey>
-    <bcf:citekey order="5">ref29</bcf:citekey>
-    <bcf:citekey order="5">ref31</bcf:citekey>
-    <bcf:citekey order="6">ref3</bcf:citekey>
-    <bcf:citekey order="7">ref11</bcf:citekey>
-    <bcf:citekey order="8">ref3</bcf:citekey>
-    <bcf:citekey order="8">ref4</bcf:citekey>
-    <bcf:citekey order="8">ref11</bcf:citekey>
-    <bcf:citekey order="8">ref26</bcf:citekey>
-    <bcf:citekey order="9">ref1</bcf:citekey>
-    <bcf:citekey order="9">ref2</bcf:citekey>
-    <bcf:citekey order="9">ref12</bcf:citekey>
-    <bcf:citekey order="9">ref16</bcf:citekey>
-    <bcf:citekey order="9">ref19</bcf:citekey>
-    <bcf:citekey order="9">ref21</bcf:citekey>
-    <bcf:citekey order="9">ref32</bcf:citekey>
-    <bcf:citekey order="10">ref16</bcf:citekey>
-    <bcf:citekey order="11">ref8</bcf:citekey>
-    <bcf:citekey order="12">ref25</bcf:citekey>
-    <bcf:citekey order="13">ref23</bcf:citekey>
-    <bcf:citekey order="14">ref9</bcf:citekey>
-    <bcf:citekey order="15">ref11</bcf:citekey>
-    <bcf:citekey order="16">ref11</bcf:citekey>
-    <bcf:citekey order="17">ref25</bcf:citekey>
-    <bcf:citekey order="18">ref15</bcf:citekey>
-    <bcf:citekey order="19">ref29</bcf:citekey>
-    <bcf:citekey order="20">ref13</bcf:citekey>
-    <bcf:citekey order="21">ref22</bcf:citekey>
-    <bcf:citekey order="22">ref14</bcf:citekey>
-    <bcf:citekey order="23">ref28</bcf:citekey>
-    <bcf:citekey order="24">ref11</bcf:citekey>
-    <bcf:citekey order="25">ref12</bcf:citekey>
-    <bcf:citekey order="26">ref17</bcf:citekey>
-    <bcf:citekey order="27">ref30</bcf:citekey>
-    <bcf:citekey order="28">ref30</bcf:citekey>
-    <bcf:citekey order="29">ref4</bcf:citekey>
-    <bcf:citekey order="30">ref11</bcf:citekey>
-    <bcf:citekey order="31">ref27</bcf:citekey>
-    <bcf:citekey order="32">ref23</bcf:citekey>
-    <bcf:citekey order="33">ref8</bcf:citekey>
-    <bcf:citekey order="34">ref29</bcf:citekey>
-    <bcf:citekey order="35">ref23</bcf:citekey>
-    <bcf:citekey order="36">ref23</bcf:citekey>
-    <bcf:citekey order="37">ref23</bcf:citekey>
-    <bcf:citekey order="38">ref8</bcf:citekey>
-    <bcf:citekey order="39">ref8</bcf:citekey>
-    <bcf:citekey order="40">ref8</bcf:citekey>
-    <bcf:citekey order="41">ref8</bcf:citekey>
-    <bcf:citekey order="42">ref23</bcf:citekey>
-    <bcf:citekey order="43">ref23</bcf:citekey>
-    <bcf:citekey order="44">ref23</bcf:citekey>
-    <bcf:citekey order="45">ref23</bcf:citekey>
-    <bcf:citekey order="46">ref8</bcf:citekey>
-    <bcf:citekey order="47">ref23</bcf:citekey>
-    <bcf:citekey order="48">ref1</bcf:citekey>
-    <bcf:citekey order="49">ref5</bcf:citekey>
-    <bcf:citekey order="50">ref6</bcf:citekey>
-    <bcf:citekey order="51">ref24</bcf:citekey>
-    <bcf:citekey order="52">ref29</bcf:citekey>
-    <bcf:citekey order="53">ref32</bcf:citekey>
-    <bcf:citekey order="54">ref2</bcf:citekey>
-    <bcf:citekey order="55">ref3</bcf:citekey>
-    <bcf:citekey order="56">ref4</bcf:citekey>
-    <bcf:citekey order="57">ref7</bcf:citekey>
-    <bcf:citekey order="58">ref10</bcf:citekey>
-    <bcf:citekey order="59">ref11</bcf:citekey>
-    <bcf:citekey order="60">ref12</bcf:citekey>
-    <bcf:citekey order="61">ref16</bcf:citekey>
-    <bcf:citekey order="62">ref18</bcf:citekey>
-    <bcf:citekey order="63">ref19</bcf:citekey>
-    <bcf:citekey order="64">ref20</bcf:citekey>
-    <bcf:citekey order="65">ref31</bcf:citekey>
-    <bcf:citekey order="66">ref26</bcf:citekey>
-    <bcf:citekey order="67">ref21</bcf:citekey>
-    <bcf:citekey order="68">ref8</bcf:citekey>
-    <bcf:citekey order="69">ref25</bcf:citekey>
-    <bcf:citekey order="70">ref23</bcf:citekey>
-    <bcf:citekey order="71">ref9</bcf:citekey>
-    <bcf:citekey order="72">ref15</bcf:citekey>
-    <bcf:citekey order="73">ref13</bcf:citekey>
-    <bcf:citekey order="74">ref22</bcf:citekey>
-    <bcf:citekey order="75">ref14</bcf:citekey>
-    <bcf:citekey order="76">ref28</bcf:citekey>
-    <bcf:citekey order="77">ref17</bcf:citekey>
-    <bcf:citekey order="78">ref30</bcf:citekey>
-    <bcf:citekey order="79">ref27</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">ref1</bcf:citekey>
+    <bcf:citekey order="1" intorder="2">ref5</bcf:citekey>
+    <bcf:citekey order="1" intorder="3">ref6</bcf:citekey>
+    <bcf:citekey order="1" intorder="4">ref24</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">ref29</bcf:citekey>
+    <bcf:citekey order="2" intorder="2">ref32</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">ref2</bcf:citekey>
+    <bcf:citekey order="3" intorder="2">ref3</bcf:citekey>
+    <bcf:citekey order="3" intorder="3">ref4</bcf:citekey>
+    <bcf:citekey order="3" intorder="4">ref7</bcf:citekey>
+    <bcf:citekey order="3" intorder="5">ref10</bcf:citekey>
+    <bcf:citekey order="3" intorder="6">ref11</bcf:citekey>
+    <bcf:citekey order="3" intorder="7">ref12</bcf:citekey>
+    <bcf:citekey order="3" intorder="8">ref16</bcf:citekey>
+    <bcf:citekey order="3" intorder="9">ref18</bcf:citekey>
+    <bcf:citekey order="3" intorder="10">ref19</bcf:citekey>
+    <bcf:citekey order="3" intorder="11">ref20</bcf:citekey>
+    <bcf:citekey order="3" intorder="12">ref29</bcf:citekey>
+    <bcf:citekey order="3" intorder="13">ref31</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">ref12</bcf:citekey>
+    <bcf:citekey order="4" intorder="2">ref20</bcf:citekey>
+    <bcf:citekey order="4" intorder="3">ref29</bcf:citekey>
+    <bcf:citekey order="4" intorder="4">ref31</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">ref12</bcf:citekey>
+    <bcf:citekey order="5" intorder="2">ref20</bcf:citekey>
+    <bcf:citekey order="5" intorder="3">ref29</bcf:citekey>
+    <bcf:citekey order="5" intorder="4">ref31</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">ref3</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">ref11</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">ref3</bcf:citekey>
+    <bcf:citekey order="8" intorder="2">ref4</bcf:citekey>
+    <bcf:citekey order="8" intorder="3">ref11</bcf:citekey>
+    <bcf:citekey order="8" intorder="4">ref26</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">ref1</bcf:citekey>
+    <bcf:citekey order="9" intorder="2">ref2</bcf:citekey>
+    <bcf:citekey order="9" intorder="3">ref12</bcf:citekey>
+    <bcf:citekey order="9" intorder="4">ref16</bcf:citekey>
+    <bcf:citekey order="9" intorder="5">ref19</bcf:citekey>
+    <bcf:citekey order="9" intorder="6">ref21</bcf:citekey>
+    <bcf:citekey order="9" intorder="7">ref32</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">ref16</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">ref8</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">ref25</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">ref23</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">ref9</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">ref11</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">ref11</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">ref25</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">ref15</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">ref29</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">ref13</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">ref22</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">ref14</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">ref28</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">ref11</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">ref12</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">ref17</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">ref30</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">ref30</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">ref4</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">ref11</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">ref27</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">ref23</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">ref8</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">ref29</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">ref23</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">ref23</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">ref23</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">ref8</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">ref8</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">ref8</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">ref8</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">ref23</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">ref23</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">ref23</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">ref23</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">ref8</bcf:citekey>
+    <bcf:citekey order="47" intorder="1">ref23</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
