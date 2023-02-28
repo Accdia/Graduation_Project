@@ -1,66 +1,49 @@
-import cv2
 import numpy as np
-from matplotlib import pyplot as plt
+from scipy import fftpack, ndimage
+import matplotlib.pyplot as plt
+import cv2
+from scipy.ndimage import gaussian_filter
 
 
-def low_pass_filter(img, sigma):
-    rows, cols = img.shape
-    crow, ccol = rows // 2, cols // 2
-    x = np.linspace(0, cols - 1, cols)
-    y = np.linspace(0, rows - 1, rows)
-    xv, yv = np.meshgrid(x, y)
-    d = np.sqrt((xv - ccol) ** 2 + (yv - crow) ** 2)
-    kernel = cv2.getGaussianKernel(rows, sigma) * cv2.getGaussianKernel(cols, sigma).T
-    kernel = kernel / np.max(kernel)
-    fft_img = np.fft.fft2(img)
-    fft_shifted = np.fft.fftshift(fft_img)
-    filtered = fft_shifted * kernel
-    filtered_shifted = np.fft.ifftshift(filtered)
-    filtered_img = np.fft.ifft2(filtered_shifted)
-    filtered_img = np.abs(filtered_img)
-    return filtered_img
+def ascending_cosine_filter(size):
+    """
+    Generate an ascending cosine filter of the given size.
+    """
+    x = np.arange(size) - size // 2
+    y = np.arange(size) - size // 2
+    xx, yy = np.meshgrid(x, y)
+    dist = np.sqrt(xx ** 2 + yy ** 2)
+    angle = np.arctan2(yy, xx)
+    angle[angle < 0] += 2 * np.pi
+    return np.cos(angle) * (dist < size // 2)
 
 
-if __name__ == '__main__':
-    # Load the image
-    img = cv2.imread('image.jpg', 0)
+def process_image(image):
+    """
+    Process the given image using a Gaussian filter.
+    """
+    # Convert the image to grayscale if necessary
+    if len(image.shape) == 3:
+        image = np.mean(image, axis=2)
 
-    # Apply the 2D Fourier Transform to the image
-    f = np.fft.fft2(img)
+    # Apply the Gaussian filter
+    filtered = gaussian_filter(image, sigma=2)
 
-    # Shift the zero-frequency component to the center of the spectrum
-    fshift = np.fft.fftshift(f)
+    # Normalize the filtered image
+    filtered = (filtered - np.min(filtered)) / (np.max(filtered) - np.min(filtered))
 
-    # Compute the magnitude spectrum (absolute value) of the Fourier Transform
-    magnitude_spectrum = 20 * np.log(np.abs(fshift))
+    return filtered
 
-    # Display the magnitude spectrum using Matplotlib
-    plt.imshow(magnitude_spectrum, cmap='gray')
-    plt.title('Magnitude Spectrum'), plt.xticks([]), plt.yticks([])
-    plt.show()
+# Load the image
+image = cv2.imread('image.jpg', cv2.IMREAD_COLOR)
 
-    # Apply the low-pass filter to the magnitude spectrum of the Fourier Transform of the image
-    sigma = 20
-    filtered_spectrum = low_pass_filter(magnitude_spectrum, sigma)
+# Process the image
+filtered = process_image(image)
 
-    # Display the filtered magnitude spectrum using Matplotlib
-    plt.imshow(filtered_spectrum, cmap='gray')
-    plt.title('Filtered Magnitude Spectrum'), plt.xticks([]), plt.yticks([])
-    plt.show()
-
-    # Compute the filtered image by taking the inverse Fourier Transform of the filtered frequency domain representation
-    filtered_fshift = np.fft.ifftshift(filtered_spectrum)
-    filtered_f = np.fft.ifft2(filtered_fshift)
-    filtered_img = np.abs(filtered_f)
-
-    # Display the filtered image using Matplotlib
-    plt.imshow(filtered_img, cmap='gray')
-    plt.title('Filtered Image'), plt.xticks([]), plt.yticks([])
-    plt.show()
-
-    # Display the original and filtered image side by side using Matplotlib
-    plt.subplot(121), plt.imshow(img, cmap='gray')
-    plt.title('Original Image'), plt.xticks([]), plt.yticks([])
-    plt.subplot(122), plt.imshow(filtered_img, cmap='gray')
-    plt.title('Filtered Image'), plt.xticks([]), plt.yticks([])
-    plt.show()
+# Display the original and filtered images
+fig, axs = plt.subplots(1, 2, figsize=(10, 5))
+axs[0].imshow(image)
+axs[0].set_title('Original')
+axs[1].imshow(filtered, cmap='gray')
+axs[1].set_title('Ascending cosine filtered')
+plt.show()
