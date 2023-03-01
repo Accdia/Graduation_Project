@@ -14,9 +14,10 @@ def rectangular_pulse(t, width):
     array: The values of the rectangular pulse.
     """
     y = np.zeros_like(t)
-    idx = np.where(np.abs(t) <= width/2)
+    idx = np.where(np.abs(t) <= width / 2)
     y[idx] = 1
     return y
+
 
 def raised_cosine_filter(t, beta):
     """
