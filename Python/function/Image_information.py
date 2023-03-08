@@ -5,7 +5,6 @@ def image_color_depth(image):
         return 24
     if image.mode == 'CMYK':
         return 32
-    # return image.getbands
 
 
 def image_size(image):
@@ -29,10 +28,10 @@ def GetFileSize(filepath):
     else:
         KBX = size / 1024
         if KBX < 1024:
-            return '%.1f' % float(KBX) + 'KB'
+            return '%.2f' % float(KBX) + 'KB'
         else:
             MBX = KBX / 1024
             if MBX < 1024:
-                return '%.1f' % float(MBX) + 'MB'
+                return '%.2f' % float(MBX) + 'MB'
             else:
-                return '%.1f' % float(MBX/1024) + 'GB'
+                return '%.2f' % float(MBX/1024) + 'GB'
