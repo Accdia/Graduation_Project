@@ -11,7 +11,7 @@ if __name__ == '__main__':
     cv2.imwrite('../image/blur.jpg', blur)
     blur1 = Image.open('../image/blur.jpg')
     blur2 = blur1.convert('L')
-    blur2.save('../image/blur.jpg')
+    blur2.save('../image/GaussianBlur.jpg')
 
     # 显示结果
     plt.subplot(121), plt.imshow(img), plt.title('Original')
