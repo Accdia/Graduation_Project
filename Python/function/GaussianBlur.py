@@ -1,6 +1,8 @@
 import cv2
 import matplotlib.pyplot as plt
 from PIL import Image
+import os
+import Image_information
 
 if __name__ == '__main__':
     # 读取图像
@@ -12,6 +14,10 @@ if __name__ == '__main__':
     blur1 = Image.open('../image/blur.jpg')
     blur2 = blur1.convert('L')
     blur2.save('../image/GaussianBlur.jpg')
+    print('Original image size: ', Image_information.GetFileSize('../image/image.jpg'))
+    print('GaussianBlur image size: ', Image_information.GetFileSize('../image/GaussianBlur.jpg'))
+    # print('Original image size: ', os.path.getsize('../image/image.jpg'))
+    # print('GaussianBlur image size: ', os.path.getsize('../image/GaussianBlur.jpg'))
 
     # 显示结果
     plt.subplot(121), plt.imshow(img), plt.title('Original')
