@@ -1,15 +1,17 @@
-import os
-import sys
-
 import cv2
-from PIL import Image
 
+# # 动态的将搜索路径添加到sys.path中
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from function import GaussianBlur
+from function import GaussianBlur, Image_information
 
 if __name__ == '__main__':
-    image = GaussianBlur.gaussian(cv2.imread('image/image.jpg'))
+    image = cv2.imread('image/image.jpg')
+    print('Original image size= ', Image_information.GetFileSize('image/image.jpg'))
+    for size in range(3, 10, 2):
+        GaussianBlur.gaussian(size, image)
+    # image = GaussianBlur.gaussian(5, cv2.imread('image/image.jpg'))
+
     # print('Original image size: ', Image_information.GetFileSize('image/image.jpg'))
     # print('GaussianBlur image size: ', Image_information.GetFileSize('image/GaussianBlur.jpg'))  # 获取文件大小
 
