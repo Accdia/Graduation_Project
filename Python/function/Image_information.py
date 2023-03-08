@@ -1,3 +1,6 @@
+import os
+
+
 def image_color_depth(image):
     if image.mode == 'L':
         return 8
@@ -10,12 +13,6 @@ def image_color_depth(image):
 def image_size(image):
     size = list(image.size)
     return size[0] * size[1]
-
-
-# 获取文件大小（可直接嵌入工程使用）
-# input:文件路径
-# output：文件大小，单位
-import os
 
 
 def GetFileSize(filepath):
