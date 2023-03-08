@@ -53,22 +53,22 @@ def transfer_image(image_file_path, destination_address, filter_name):
 
 if __name__ == '__main__':
     # Load the image
-    image = cv2.imread('image/image.jpg', cv2.IMREAD_COLOR)
-    transfer_image('image/image.jpg', 'https://example.com/upload', 'original')
+    image = cv2.imread('../image/image.jpg', cv2.IMREAD_COLOR)
+    transfer_image('../image/image.jpg', 'https://example.com/upload', 'original')
 
     kernel = np.ones((5, 5), np.float32) / 25
     smoothed = cv2.filter2D(image, -1, kernel)
-    cv2.imwrite('image/smoothed.jpg', smoothed)
-    transfer_image('image/smoothed.jpg', 'https://example.com/upload', 'smoothed')
+    cv2.imwrite('../image/smoothed.jpg', smoothed)
+    transfer_image('../image/smoothed.jpg', 'https://example.com/upload', 'smoothed')
 
     # Process the image
     blur = process_image(image)
-    cv2.imwrite('image/blur.jpg', blur)
-    transfer_image('image/blur.jpg', 'https://example.com/upload', 'blur')
+    cv2.imwrite('../image/blur.jpg', blur)
+    transfer_image('../image/blur.jpg', 'https://example.com/upload', 'blur')
 
     median = cv2.medianBlur(image, 5)
-    cv2.imwrite('image/median.jpg', median)
-    transfer_image('image/median.jpg', 'https://example.com/upload', 'median')
+    cv2.imwrite('../image/median.jpg', median)
+    transfer_image('../image/median.jpg', 'https://example.com/upload', 'median')
 
     # Display the original and filtered images
     fig, axs = plt.subplots(1, 4, figsize=(10, 5))
@@ -81,28 +81,3 @@ if __name__ == '__main__':
     axs[3].imshow(smoothed, cmap='gray')
     axs[3].set_title('smoothed')
     plt.show()
-
-# import cv2
-# import numpy as np
-# import matplotlib.pyplot as plt
-#
-# # Load the image
-# img = cv2.imread('image/image.jpg', cv2.IMREAD_COLOR)
-#
-# # Create a 5x5 low-pass filter kernel
-# kernel = np.ones((5,5),np.float32)/25
-#
-# # Apply the filter to the image using convolution
-# smoothed = cv2.filter2D(img, -1, kernel)
-#
-# # Display the original and filtered images side by side
-# fig, axs = plt.subplots(1, 2, figsize=(10, 5))
-# axs[0].imshow(img)
-# axs[0].set_title('Original')
-# axs[1].imshow(smoothed, cmap='gray')
-# axs[1].set_title('smoothed')
-# plt.show()
-#
-# # Wait for a key press and close all windows
-# cv2.waitKey(0)
-# cv2.destroyAllWindows()
