@@ -41,8 +41,8 @@ def raised_cosine_filter(t, beta):
 
 if __name__ == '__main__':
     t = np.linspace(-10, 10, 1000)
-    width = 2
-    beta = 0.05
+    width = 4
+    beta = 0.6
 
     rect_pulse = rectangular_pulse(t, width)
     raised_cosine = raised_cosine_filter(t, beta)
