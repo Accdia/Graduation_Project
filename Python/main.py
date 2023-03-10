@@ -7,7 +7,7 @@ from function import GaussianBlur, Image_information
 
 if __name__ == '__main__':
     image = cv2.imread('image/image.jpg')
-    print('Original image size= ', Image_information.GetFileSize('image/image.jpg'))
+    print('Original image size= ', Image_information.getfilesize('image/image.jpg'))
     for size in range(3, 17, 2):
         GaussianBlur.gaussian(size, image)
     # image = GaussianBlur.gaussian(5, cv2.imread('image/image.jpg'))

@@ -17,7 +17,7 @@ def gaussian(size, image):
     # blur.save('image/GaussianBlur.jpg')
     # 输出文件大小
     print('GaussianBlur size =', size, 'image size =',
-          Image_information.GetFileSize('image' + '/GaussianBlur_' + str(size) + '.jpg'))
+          Image_information.getfilesize('image' + '/GaussianBlur_' + str(size) + '.jpg'))
     # print('Original image size: ', Image_information.GetFileSize('image/image.jpg'))
     # print('GaussianBlur image size: ', Image_information.GetFileSize('image/GaussianBlur.jpg'))  # 获取文件大小
 

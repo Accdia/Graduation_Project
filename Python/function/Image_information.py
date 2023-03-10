@@ -15,7 +15,7 @@ def image_size(image):
     return size[0] * size[1]
 
 
-def GetFileSize(filepath):
+def getfilesize(filepath):
     size = os.path.getsize(filepath)  # 返回的是字节大小
     '''
     为了更好地显示，应该时刻保持显示一定整数形式，即单位自适应
@@ -23,12 +23,12 @@ def GetFileSize(filepath):
     if size < 1024:
         return '%i' % size + 'size'
     else:
-        KBX = size / 1024
-        if KBX < 1024:
-            return '%.2f' % float(KBX) + 'KB'
+        kbx = size / 1024
+        if kbx < 1024:
+            return '%.2f' % float(kbx) + 'KB'
         else:
-            MBX = KBX / 1024
-            if MBX < 1024:
-                return '%.2f' % float(MBX) + 'MB'
+            mbx = kbx / 1024
+            if mbx < 1024:
+                return '%.2f' % float(mbx) + 'MB'
             else:
-                return '%.2f' % float(MBX/1024) + 'GB'
+                return '%.2f' % float(mbx/1024) + 'GB'
